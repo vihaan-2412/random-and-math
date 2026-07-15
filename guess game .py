@@ -11,14 +11,11 @@ while guesses_left > 0:
     except ValueError:
         print('Please enter a valid number.')
         continue
-    if guess>=40 and guess<=50:
-        print("hot")
-    elif guess>=30 and guess<=40:
-        print("warm")
-    elif guess>=20 and guess<=30:       
-        print("cold")
-    elif guess>=10 and guess<=20:
-        print("freezing")
+
+    if guess>number:
+        print('Your guess is too high.')
+    elif guess<number:
+        print('Your guess is too low.')
 
     if guess < 1 or guess > 50:
         print('Your guess must be between 1 and 50.')
@@ -27,10 +24,7 @@ while guesses_left > 0:
     if guess == number:
         print('Correct! You guessed the number.')
         break
-    elif guess < number:
-        print('Too low.')
-    else:
-        print('Too high.')
+ 
 
     guesses_left -= 1
 
